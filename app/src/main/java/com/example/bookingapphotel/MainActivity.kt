@@ -10,11 +10,10 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        // ligne de teste de l'implementation de la base de donnée
+        val firebase: DatabaseReference= FirebaseDatabase.getInstance().getReference("laurie")
 
-        // comentaire Laurie encore une modification
-        // modification chrsitina modification
-        // Encore une modification de la part
-        // chrsinz fofibg
+
         // modif emma
 
     }

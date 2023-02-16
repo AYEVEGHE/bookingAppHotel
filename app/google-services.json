@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "1070211329674",
+    "firebase_url": "https://app-booking-hotel-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "app-booking-hotel",
     "storage_bucket": "app-booking-hotel.appspot.com"
   },
