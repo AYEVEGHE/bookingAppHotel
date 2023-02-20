@@ -3,8 +3,11 @@
 
     <!-- Page de connexion -->
     <string name="login_subtitle_app">Hôtel réservé en un clic</string>
+    <string name="register_subtitle_app">Création de votre compte</string>
     <string name="login_email">Adresse mail</string>
     <string name="login_password">Mot de passe</string>
     <string name="login_button_enter_app">Entrer</string>
+    <string name="register_button_enter_app">Enregistrer</string>
     <string name="login_create_account">Pas de compte ? Créer</string>
+    <string name="Register_login_account"> Identifiez-vous</string>
 </resources>
