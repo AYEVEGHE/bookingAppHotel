@@ -15,6 +15,11 @@
     <string name="search_title">Chercher un hotel</string>
     <string name="search_subtitle">Trouver la chambre qui vous convient</string>
     <string name="search_destination">Destination</string>
+    <string name="search_arrive">Arrivé</string>
+    <string name="search_depart">Départ</string>
+    <string name="search_nb_personne">Personne(s)</string>
+    <string name="search_type_chambre">Type de chambre</string>
+    <string name="search_button">Chercher</string>
     
     <!--Test -->
     <string-array name="test_spinner">
@@ -22,5 +27,13 @@
         <item>Paris</item>
         <item>New York</item>
         <item>Tokyo</item>
+    </string-array>
+
+    <!--Test -->
+    <string-array name="test_spinner_type_chambre">
+        <item>Type chambre 1</item>
+        <item>Type chambre 2</item>
+        <item>Type chambre 3</item>
+        <item>Type chambre 4</item>
     </string-array>
 </resources>
