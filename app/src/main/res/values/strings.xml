@@ -10,4 +10,17 @@
     <string name="register_button_enter_app">Enregistrer</string>
     <string name="login_create_account">Pas de compte ? Créer</string>
     <string name="Register_login_account"> Identifiez-vous</string>
+
+    <!-- Page de recherche d'hotel -->
+    <string name="search_title">Chercher un hotel</string>
+    <string name="search_subtitle">Trouver la chambre qui vous convient</string>
+    <string name="search_destination">Destination</string>
+    
+    <!--Test -->
+    <string-array name="test_spinner">
+        <item>Barcelone</item>
+        <item>Paris</item>
+        <item>New York</item>
+        <item>Tokyo</item>
+    </string-array>
 </resources>

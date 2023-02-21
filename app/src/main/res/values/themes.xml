@@ -14,21 +14,33 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <!-- Créer composant titre par défault -->
+    <!-- Créer composant titre par défault login-->
     <style name="TitleTextStyle">
         <item name="android:textColor">@color/white</item>
         <item name="android:textSize">36sp</item>
         <item name="android:fontFamily">@font/raleway_bold</item>
     </style>
 
-    <!-- Créer composant sous texte par défault -->
+    <!-- Créer composant sous texte par défault login-->
     <style name="TextStyle" parent="TitleTextStyle">
         <item name="android:textSize">16sp</item>
     </style>
 
-    <!-- Créer composant créer un compte par défault -->
+    <!-- Créer composant créer un compte par défault login-->
     <style name="CreateAccoutTextStyle" parent="TitleTextStyle">
         <item name="android:textSize">20sp</item>
+    </style>
+
+    <!-- Créer composant titre par défault search-->
+    <style name="TitleTextStyleSearch">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">@font/raleway_bold</item>
+    </style>
+
+    <!-- Créer composant sous texte par défault search-->
+    <style name="TextStyleSearch" parent="TitleTextStyle">
+        <item name="android:textSize">16sp</item>
     </style>
 
 </resources>

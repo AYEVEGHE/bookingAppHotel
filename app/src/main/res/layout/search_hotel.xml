@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="300dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/b"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/PopupBackground"
+        android:layout_width="0dp"
+        android:layout_height="470dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="150dp"
+        android:layout_marginEnd="30dp"
+        android:background="@color/dark_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:orientation="horizontal" />
+
+    <TextView
+        android:id="@+id/titreSearch"
+        style="@style/TitleTextStyleSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:text="@string/search_title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/PopupBackground" />
+
+    <TextView
+        android:id="@+id/titreAccrocheSearch"
+        style="@style/TextStyleSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/search_subtitle"
+        app:layout_constraintEnd_toEndOf="@+id/titreSearch"
+        app:layout_constraintStart_toStartOf="@+id/titreSearch"
+        app:layout_constraintTop_toBottomOf="@+id/titreSearch" />
+
+    <LinearLayout
+        android:id="@+id/PopupTextLimit"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="15dp"
+        android:layout_marginBottom="15dp"
+        android:orientation="horizontal"
+
+        app:layout_constraintBottom_toBottomOf="@+id/PopupBackground"
+        app:layout_constraintEnd_toEndOf="@+id/PopupBackground"
+        app:layout_constraintStart_toStartOf="@+id/PopupBackground"
+        app:layout_constraintTop_toBottomOf="@+id/titreAccrocheSearch" />
+
+    <TextView
+        android:id="@+id/SearchDestination"
+        style="@style/TextStyleSearch"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/search_destination"
+        app:layout_constraintStart_toStartOf="@+id/PopupTextLimit"
+        app:layout_constraintTop_toTopOf="@+id/PopupTextLimit" />
+
+    <Spinner
+        android:id="@+id/SpinnerDestination"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/style_spinner_destination"
+        android:paddingStart="20dp"
+        android:entries="@array/test_spinner"
+        android:spinnerMode="dropdown"
+        app:layout_constraintEnd_toEndOf="@+id/PopupTextLimit"
+        app:layout_constraintStart_toStartOf="@+id/PopupTextLimit"
+        app:layout_constraintTop_toBottomOf="@+id/SearchDestination" />
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
