@@ -6,6 +6,7 @@
     <string name="register_subtitle_app">Création de votre compte</string>
     <string name="login_email">Adresse mail</string>
     <string name="login_password">Mot de passe</string>
+    <string name="nomPrenom">Nom et prenom</string>
     <string name="login_button_enter_app">Entrer</string>
     <string name="register_button_enter_app">Enregistrer</string>
     <string name="login_create_account">Pas de compte ? Créer</string>
@@ -20,6 +21,8 @@
     <string name="search_nb_personne">Personne(s)</string>
     <string name="search_type_chambre">Type de chambre</string>
     <string name="search_button">Chercher</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
     
     <!--Test -->
     <string-array name="test_spinner">

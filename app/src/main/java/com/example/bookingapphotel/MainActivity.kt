@@ -74,7 +74,9 @@ class MainActivity : AppCompatActivity() {
                     task ->
                 if (task.isSuccessful) {
                     // Sign in success,lets move to the next activity
-                    Toast.makeText(baseContext,"Authentication succeeded.",Toast.LENGTH_SHORT).show()
+                    //Toast.makeText(baseContext,"Authentication succeeded.",Toast.LENGTH_SHORT).show()
+                    val intent=Intent(this,SearchActivity::class.java)
+                    startActivity(intent)
                 }else{
                     //If sign in fails, display a message to the user.
                     Toast.makeText(baseContext,"Authentication failed.",Toast.LENGTH_SHORT).show()
