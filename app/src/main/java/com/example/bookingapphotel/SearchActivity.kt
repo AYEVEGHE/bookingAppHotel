@@ -71,9 +71,8 @@ class SearchActivity : AppCompatActivity(){
         }
         // Fin de la configuration de la bar de navigation
 
-
+        // configuration de la date d'arrivee et de retour
         dateTextArrivee = findViewById(R.id.SearchDateArrivé)
-
 
         //prendre l'année, le mois et le jour de Calendar
         val c = Calendar.getInstance()
