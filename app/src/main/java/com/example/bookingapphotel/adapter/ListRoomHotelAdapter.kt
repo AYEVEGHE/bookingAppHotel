@@ -20,6 +20,7 @@ class ListRoomHotelAdapter(
     private val layoutid: Int
     ) : RecyclerView.Adapter<ListRoomHotelAdapter.ViewHolder>(){
 
+    //permet de ranger tout les composants à controler
     class ViewHolder(view: View) : RecyclerView.ViewHolder(view){
         val roomImage = view.findViewById<ImageView>(R.id.imageHotelPresentation)
         val nomHotel = view.findViewById<TextView>(R.id.nomHotel)
@@ -36,7 +37,7 @@ class ListRoomHotelAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        //récupérer les information des chambres
+        //récupérer les information de la chambre
         var currentRoom = roomList[position]
 
         //utiliser glide pour récupérer l'image à partir de son lien

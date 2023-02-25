@@ -20,7 +20,9 @@ class ListDispoRoomHotelActivity : AppCompatActivity() {
         //charger RoomRepository
         val repo = RoomRepository()
 
+        //mettre à jour la liste des chambres disponible
         repo.updateData{
+            //injection du fragment dans "fragment_list_hotel
             val transaction = supportFragmentManager.beginTransaction()
             transaction.replace(R.id.fragment_list_hotel, ListRoomHotelFragment(this))
             transaction.addToBackStack(null)

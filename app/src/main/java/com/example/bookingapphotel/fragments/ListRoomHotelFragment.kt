@@ -24,9 +24,10 @@ class ListRoomHotelFragment (
         val view = inflater?.inflate(R.layout.fragment_dispo_room_hotel, container, false)
 
 
-
-
+        //récupérer le RecyclerView
         val verticalRecyclerView = view!!.findViewById<RecyclerView>(R.id.horizontal_recycler_view)
+        //roomList est un liste qui permet de stocker les chambres d'hotel
+        //elle est déclarer dans "RoomRepository" qui a été importer
         verticalRecyclerView.adapter = ListRoomHotelAdapter(context, roomList, R.layout.item_vertical_room)
         verticalRecyclerView.addItemDecoration(HotelImageDecoration())
 

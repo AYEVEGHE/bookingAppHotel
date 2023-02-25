@@ -11,6 +11,7 @@ class HotelImageDecoration : RecyclerView.ItemDecoration() {
         parent: RecyclerView,
         state: RecyclerView.State
     ) {
+        //permet de faire un espace entre chaque fragment de chambre
         outRect.bottom = 40
     }
 }
