@@ -39,4 +39,13 @@
         <item>Type chambre 3</item>
         <item>Type chambre 4</item>
     </string-array>
+
+
+    <!-- Liste hotel exemple -->
+    <string name="nom_hotel">Hotel Arts Barcelona</string>
+    <string name="petite_description_hotel">Hotel de luxe élégant et moderne</string>
+    <string name="liste_tarif_name_hotel">Tarif pour une nuit :</string>
+    <string name="liste_tarif_par_nuit_hotel">150€</string>
+
+
 </resources>
