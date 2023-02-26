@@ -24,19 +24,7 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
     
-    <!--Test -->
-    <string-array name="test_spinner">
-        <item>Barcelone</item>
-        <item>Paris</item>
-        <item>New York</item>
-        <item>Tokyo</item>
-    </string-array>
 
-    <!--Test -->
-    <string-array name="test_spinner_type_chambre">
-        <item>Type chambre 1</item>
-        <item>Type chambre 2</item>
-        <item>Type chambre 3</item>
-        <item>Type chambre 4</item>
-    </string-array>
+
+
 </resources>

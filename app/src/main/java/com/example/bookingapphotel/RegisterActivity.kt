@@ -87,7 +87,7 @@ class RegisterActivity: AppCompatActivity() {
                 .addOnCompleteListener(this){
                     task ->
                     if (task.isSuccessful) {
-                        // Sign in success,lets move to the next activity
+                        // Sign in success,let's move to the next activity
                         val currentUser=auth.currentUser
 
                         // On va faire correspondre l'userID à la realtime database

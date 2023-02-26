@@ -5,7 +5,9 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
+import android.widget.ArrayAdapter
 import android.widget.Button
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.ActionBarDrawerToggle
@@ -31,6 +33,10 @@ class SearchActivity : AppCompatActivity(){
     var database : FirebaseDatabase?=null
     private lateinit var NavigationView: NavigationView
 
+
+    lateinit var spinner1:Spinner
+    lateinit var spinner2:Spinner
+
     @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,11 +46,17 @@ class SearchActivity : AppCompatActivity(){
         database=FirebaseDatabase.getInstance()
         databaseReference=database?.reference!!.child("profile")
 
-        // Methode qui permet  de charger la page en fonction du profil
+        // This method permits to lead the page of the app according to the user profile
         loadProfile()
 
+        spinner1=findViewById(R.id.SpinnerDestination)
+        // This method will set the destination available for the user according to what is in the database
+        configSprinner("chambre","ville",spinner1)
+        // This method will set the type of room available for the user according to what is in the database
+        spinner2=findViewById(R.id.SpinnerTypeChambre)
+        configSprinner("chambre","categorie",spinner2)
 
-        //Bar de navigation
+        //Setting of Bar de navigation
         val drawerLayout: DrawerLayout =findViewById(R.id.drawerLayout)
         val navView : NavigationView =findViewById(R.id.nav_view)
 
@@ -69,7 +81,7 @@ class SearchActivity : AppCompatActivity(){
             }
             true
         }
-        // Fin de la configuration de la bar de navigation
+        // End of the setting of the navigation bar
 
         // configuration de la date d'arrivee et de retour
         dateTextArrivee = findViewById(R.id.SearchDateArrivé)
@@ -124,9 +136,12 @@ class SearchActivity : AppCompatActivity(){
         }
 
     }
-    // Cette fonction va permettre de personnaliser la page de recherche en fonction de l'utilisateur connecté
+
+    // This function will permit to change the page according to the connected user
+
     private fun loadProfile(){
-        // On récupère l'adresse mail du l'utilisateur connecté pour l'afficher au niveau de son profil
+
+        // We retrieve the email address of the user to post it at in the profile part
         val user =auth.currentUser
         val userReference=databaseReference?.child(user?.uid!!)
         userReference?.addValueEventListener(object:ValueEventListener{
@@ -134,9 +149,7 @@ class SearchActivity : AppCompatActivity(){
                 NavigationView = findViewById(R.id.nav_view)
                 val username = NavigationView.findViewById<TextView>(R.id.user_name)
                 username.text=snapshot.child("nom_prenom").value.toString()
-
             }
-
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
@@ -151,6 +164,30 @@ class SearchActivity : AppCompatActivity(){
         return super.onOptionsItemSelected(item)
     }
 
+    // This methode will configure the spinners of the page according to what is in the database
 
+    private fun configSprinner(table:String, attribut:String,spinner: Spinner){
+        databaseReference=FirebaseDatabase.getInstance().getReference()
+        var listDestination:MutableList<String> = ArrayList()
+        val chambreReference=databaseReference?.child(table)
 
-}
+        chambreReference?.addValueEventListener(object:ValueEventListener{
+            override fun onDataChange(snapshot: DataSnapshot){
+                for (childSnapshot in snapshot.children) {
+                    var destination: String=childSnapshot.child(attribut).value.toString()
+                    if ( destination !in listDestination) {
+                        listDestination.add(destination)
+                    }
+                }
+                val arrayAdapter = ArrayAdapter(this@SearchActivity, android.R.layout.simple_list_item_1,listDestination)
+                spinner.adapter=arrayAdapter
+
+            }
+
+            override fun onCancelled(error: DatabaseError) {
+                TODO("Not yet implemented")
+            }
+        })
+        }
+    }
+
