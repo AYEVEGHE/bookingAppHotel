@@ -30,5 +30,8 @@
     <string name="liste_tarif_name_hotel">Tarif pour une nuit :</string>
     <string name="liste_tarif_par_nuit_hotel">150€</string>
 
+    <!-- Page de recapitulatif de la reservation -->
+    <string name="reservation">Réservation</string>
+    <string name="recapitulatif">Récapitulatif de reservation</string>
 
 </resources>

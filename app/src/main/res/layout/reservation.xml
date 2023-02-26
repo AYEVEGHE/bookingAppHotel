@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawerLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:content=".search_hotel">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/imagehotel"
+            android:layout_width="0dp"
+            android:layout_height="300dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/b"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/PopupBackground"
+            android:layout_width="0dp"
+            android:layout_height="460dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="130dp"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/background_arounded"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+
+            android:orientation="horizontal" />
+
+        <TextView
+            android:id="@+id/titreReservation"
+            style="@style/TitleTextStyleSearch"
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:text="@string/reservation"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/PopupBackground" />
+
+        <TextView
+            android:id="@+id/titreRecapitulatif"
+            style="@style/TextStyleSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:text="@string/recapitulatif"
+            app:layout_constraintEnd_toEndOf="@+id/titreReservation"
+            app:layout_constraintStart_toStartOf="@+id/titreReservation"
+            app:layout_constraintTop_toBottomOf="@+id/titreReservation" />
+
+        <LinearLayout
+            android:id="@+id/PopupTextLimit"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="15dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="@+id/PopupBackground"
+            app:layout_constraintEnd_toEndOf="@+id/PopupBackground"
+            app:layout_constraintStart_toStartOf="@+id/PopupBackground"
+            app:layout_constraintTop_toBottomOf="@+id/titreRecapitulatif" />
+
+        <TextView
+            android:id="@+id/nomHotel"
+            style="@style/TextStyleSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:text="nom reservation"
+            app:layout_constraintStart_toStartOf="@+id/PopupTextLimit"
+            app:layout_constraintTop_toTopOf="@+id/PopupTextLimit" />
+
+        <TextView
+            android:id="@+id/nom_hotel"
+            style="@style/TextStyleSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:text="nom hotel"
+            app:layout_constraintStart_toStartOf="@+id/nomHotel"
+            app:layout_constraintTop_toTopOf="@+id/nomHotel" />
+
+        <TextView
+            android:id="@+id/type_chambre"
+            style="@style/TextStyleSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:text="type de chambre"
+            app:layout_constraintStart_toStartOf="@+id/nom_hotel"
+            app:layout_constraintTop_toTopOf="@+id/nom_hotel" />
+
+        <TextView
+            android:id="@+id/nombre_de_personne"
+            style="@style/TextStyleSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:text="nombre de personnes"
+            app:layout_constraintStart_toStartOf="@+id/type_chambre"
+            app:layout_constraintTop_toTopOf="@+id/type_chambre" />
+        <TextView
+            android:id="@+id/date_arrivee"
+            style="@style/TextStyleSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:text="date d'arrivee"
+            app:layout_constraintStart_toStartOf="@+id/nombre_de_personne"
+            app:layout_constraintTop_toTopOf="@+id/nombre_de_personne" />
+
+        <TextView
+            android:id="@+id/date_fin"
+            style="@style/TextStyleSearch"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginTop="20dp"
+            android:text="date de departe"
+            app:layout_constraintStart_toStartOf="@+id/date_arrivee"
+            app:layout_constraintTop_toTopOf="@+id/date_arrivee" />
+
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view_image_hotel"
+            android:layout_width="200dp"
+            android:layout_height="153dp"
+            app:cardCornerRadius="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="60dp"
+            app:layout_constraintStart_toStartOf="@+id/date_fin"
+            app:layout_constraintTop_toTopOf="@+id/date_fin" >
+
+            <ImageView
+                android:id="@+id/imageHotelPresentation"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/b"
+                />
+
+        </androidx.cardview.widget.CardView>
+
+
+        <TextView
+            android:id="@+id/prix"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            style="@style/reservation_prix"
+            android:background="@drawable/cadre_affichage_prix"
+            android:text="1000 €"
+            android:gravity="center"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="150dp"
+            app:layout_constraintBottom_toBottomOf="@+id/PopupTextLimit"
+            app:layout_constraintEnd_toEndOf="@+id/PopupTextLimit"
+            app:layout_constraintStart_toStartOf="@+id/PopupTextLimit"/>
+
+
+
+
+        <TextView
+            android:id="@+id/annonce_prix"
+            style="@style/TextStyleSearch"
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:text="Montant à régler:"
+            android:layout_marginRight="170dp"
+            app:layout_constraintBottom_toBottomOf="@+id/PopupTextLimit"
+            app:layout_constraintEnd_toEndOf="@+id/PopupTextLimit"
+            app:layout_constraintStart_toStartOf="@+id/PopupTextLimit"/>
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/nav_menu"
+        android:layout_gravity="start"
+        android:fitsSystemWindows="true"/>
+
+
+
+</androidx.drawerlayout.widget.DrawerLayout>
+
