@@ -16,28 +16,40 @@ class RoomRepository {
         val roomList = arrayListOf<RoomHotelModel>()
     }
 
+
+
+
     fun updateData(callback: () -> Unit){
+        // Add a listener to retrieve data from the database
         databaseRef.addValueEventListener(object : ValueEventListener {
             override fun onDataChange(snapshot: DataSnapshot) {
-                //retirer les anciennes valeurs
+                // Remove old values from the list of rooms
                 roomList.clear()
-                //récypérer la liste
+                // Iterate over all entries in the database to retrieve the list of rooms
                 for(ds in snapshot.children){
-                    //construire un objet chambre
+                    // Build a RoomHotelModel object from the data of each entry
                     val room = ds.getValue(RoomHotelModel::class.java)
 
-                    //vérifier que la chambre n'est pas null
+                    // Check that the room is not null
                     if (room!=null){
                         roomList.add(room)
                     }
                 }
-                //actionner le callback
+                // Trigger the callback after retrieving data from the database
                 callback()
             }
 
-            override fun onCancelled(error: DatabaseError) {}
-
-        } )
+            override fun onCancelled(error: DatabaseError) {
+                // In case of cancellation (not implemented)
+            }
+        })
     }
+
+
+
+
+
+
+
 
 }

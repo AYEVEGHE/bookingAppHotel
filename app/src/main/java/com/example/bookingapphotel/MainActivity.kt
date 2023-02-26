@@ -50,8 +50,6 @@ class MainActivity : AppCompatActivity() {
             login()
 
         }
-
-
     }
     private fun login(){
         // get input from the user

@@ -1,7 +1,7 @@
 package com.example.bookingapphotel
 
 class RoomHotelModel (
-    //ces val doivent être du mêe nom que celle dans la base de donnée
+    //ces val doivent être du même nom que celle dans la base de donnée
     //pour plus de simplicité dans la récupération de ces éléments
     val hotel: String = "Nom de l'hotel",
     val petite_description: String = "petite description de l'hotel",

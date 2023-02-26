@@ -134,6 +134,14 @@ class SearchActivity : AppCompatActivity(){
             }
             value.text = count.toString()
         }
+        val btnRechercher: Button =findViewById(R.id.editEntrer)
+
+        // When we click on Enter button, it will do the activity ConnexionActivity
+        btnRechercher.setOnClickListener{
+            val intent=Intent(this,ListDispoRoomHotelActivity::class.java)
+            startActivity(intent)
+
+        }
 
     }
 
@@ -188,6 +196,6 @@ class SearchActivity : AppCompatActivity(){
                 TODO("Not yet implemented")
             }
         })
-        }
+    }
     }
 

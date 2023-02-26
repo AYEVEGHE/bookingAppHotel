@@ -14,6 +14,13 @@ import com.example.bookingapphotel.R
 import com.example.bookingapphotel.RoomHotelModel
 
 
+//The purpose of this class is to provide structure and logic for linking the data of a list of
+// RoomHotelModel model objects to a RecyclerView view, which is a dynamic list view in Android.
+// It allows defining how each list item should be displayed and updated in the RecyclerView view
+// using the onBindViewHolder method.
+//The class also contains an inner class called ViewHolder, which allows organizing all the
+// components of each view item that need to be updated when filling each cell of the RecyclerView.
+
 class ListRoomHotelAdapter(
     private val context: ListDispoRoomHotelActivity,
     private val roomList: List<RoomHotelModel>,
