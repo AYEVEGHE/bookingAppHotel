@@ -29,6 +29,8 @@
         <activity android:name=".SearchActivity"></activity>
         <activity android:name=".ListDispoRoomHotelActivity"></activity>
 
+        <activity android:name=".ReservationActivity"></activity>
+        <activity android:name=".AucuneReservationActivity"></activity>
 
     </application>
 

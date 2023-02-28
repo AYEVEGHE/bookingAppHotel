@@ -29,6 +29,8 @@ class SearchActivity : AppCompatActivity(){
     var count:Int = 0
     lateinit var toggle: ActionBarDrawerToggle
     lateinit var auth: FirebaseAuth
+    var databaseReferenceProfile: DatabaseReference?=null
+    var databaseReferenceReservation: DatabaseReference?=null
     var databaseReference: DatabaseReference?=null
     var database : FirebaseDatabase?=null
     private lateinit var NavigationView: NavigationView
@@ -44,7 +46,8 @@ class SearchActivity : AppCompatActivity(){
 
         auth= FirebaseAuth.getInstance()
         database=FirebaseDatabase.getInstance()
-        databaseReference=database?.reference!!.child("profile")
+        databaseReferenceProfile=database?.reference!!.child("profile")
+        databaseReferenceReservation=database?.reference!!.child("reservation")
 
         // This method permits to lead the page of the app according to the user profile
         loadProfile()
@@ -71,7 +74,28 @@ class SearchActivity : AppCompatActivity(){
                     val intent=Intent(this,SearchActivity::class.java)
                     startActivity(intent)
                 }
-                R.id.nav_reservation->Toast.makeText(applicationContext,"clicked reservation", Toast.LENGTH_LONG).show()
+                R.id.nav_reservation->{
+                    val user =auth.currentUser
+                    val reservationsRef = FirebaseDatabase.getInstance().getReference("reservation")
+                    val reservationQuery = reservationsRef.child(user?.uid!!)
+
+
+                    reservationQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(dataSnapshot: DataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                // L'utilisateur a une réservation, on exécute ReservationActivity
+                                startActivity(Intent(this@SearchActivity, ReservationActivity::class.java))
+                            } else {
+                                // L'utilisateur n'a pas de réservation, on exécute AucuneReservationActivity
+                                startActivity(Intent(this@SearchActivity, AucuneReservationActivity::class.java))
+                            }
+                        }
+
+                        override fun onCancelled(databaseError: DatabaseError) {
+                            // Gestion des erreurs
+                        }
+                    })
+                }
                 R.id.nav_logout->{
                     auth.signOut()
                     val intent=Intent(this,MainActivity::class.java)
@@ -151,7 +175,7 @@ class SearchActivity : AppCompatActivity(){
 
         // We retrieve the email address of the user to post it at in the profile part
         val user =auth.currentUser
-        val userReference=databaseReference?.child(user?.uid!!)
+        val userReference=databaseReferenceProfile?.child(user?.uid!!)
         userReference?.addValueEventListener(object:ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot){
                 NavigationView = findViewById(R.id.nav_view)

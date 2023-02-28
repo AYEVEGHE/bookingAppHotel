@@ -15,7 +15,7 @@
             android:id="@+id/imagehotel"
             android:layout_width="0dp"
             android:layout_height="300dp"
-            android:scaleType="fitXY"
+            android:scaleType="centerCrop"
             android:src="@drawable/b"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -73,7 +73,7 @@
             app:layout_constraintTop_toBottomOf="@+id/titreRecapitulatif" />
 
         <TextView
-            android:id="@+id/nomHotel"
+            android:id="@+id/nomreservation"
             style="@style/TextStyleSearch"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
@@ -89,8 +89,8 @@
             android:layout_height="0dp"
             android:layout_marginTop="20dp"
             android:text="nom hotel"
-            app:layout_constraintStart_toStartOf="@+id/nomHotel"
-            app:layout_constraintTop_toTopOf="@+id/nomHotel" />
+            app:layout_constraintStart_toStartOf="@+id/nomreservation"
+            app:layout_constraintTop_toTopOf="@+id/nomreservation" />
 
         <TextView
             android:id="@+id/type_chambre"
@@ -143,7 +143,7 @@
             app:layout_constraintTop_toTopOf="@+id/date_fin" >
 
             <ImageView
-                android:id="@+id/imageHotelPresentation"
+                android:id="@+id/imageChambre"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:scaleType="centerCrop"
