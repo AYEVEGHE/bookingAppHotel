@@ -161,9 +161,17 @@ class SearchActivity : AppCompatActivity(){
             val spinnerDestination: Spinner = findViewById(R.id.SpinnerDestination)
             val textDestination: String = spinnerDestination.selectedItem.toString()
 
+            val dateDebut: TextView = findViewById(R.id.SearchDateArrivé)
+            val textDateDebut: String = dateDebut.toString()
+
+            val dateFin: TextView = findViewById(R.id.SearchDateArrivé)
+            val textDateFin: String = dateFin.toString()
+
             val intent=Intent(this,ListDispoRoomHotelActivity::class.java)
 
             intent.putExtra("textDestination",textDestination)
+            intent.putExtra("textDebut",textDateDebut)
+            intent.putExtra("textFin",textDateFin)
             startActivity(intent)
 
         }

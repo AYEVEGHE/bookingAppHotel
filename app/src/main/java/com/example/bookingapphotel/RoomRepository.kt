@@ -20,7 +20,7 @@ class RoomRepository(
 
     fun updateData(callback: () -> Unit){
 
-        val queryToGetData: Query = databaseRef.orderByChild(("ville")).equalTo(ville)
+        val queryToGetData: Query = databaseRef.orderByChild("ville").equalTo(ville)
 
         // Add a listener to retrieve data from the database
         queryToGetData.addValueEventListener(object : ValueEventListener {

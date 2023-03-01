@@ -8,9 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.RecyclerView
 import com.example.bookingapphotel.ListDispoRoomHotelActivity
-import com.example.bookingapphotel.MainActivity
 import com.example.bookingapphotel.R
-import com.example.bookingapphotel.RoomHotelModel
 import com.example.bookingapphotel.RoomRepository.Singleton.roomList
 import com.example.bookingapphotel.adapter.HotelImageDecoration
 import com.example.bookingapphotel.adapter.ListRoomHotelAdapter
