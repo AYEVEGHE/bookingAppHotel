@@ -16,8 +16,6 @@ class RoomRepository(
     }
 
 
-
-
     fun updateData(callback: () -> Unit){
 
         val queryToGetData: Query = databaseRef.orderByChild("ville").equalTo(ville)

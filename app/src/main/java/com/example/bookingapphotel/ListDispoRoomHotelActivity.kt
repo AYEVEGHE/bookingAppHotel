@@ -62,7 +62,27 @@ class ListDispoRoomHotelActivity : AppCompatActivity() {
                     val intent= Intent(this,SearchActivity::class.java)
                     startActivity(intent)
                 }
-                R.id.nav_reservation-> Toast.makeText(applicationContext,"clicked reservation", Toast.LENGTH_LONG).show()
+                R.id.nav_reservation->{
+                    val user =auth.currentUser
+                    val reservationsRef = FirebaseDatabase.getInstance().getReference("reservation")
+                    val reservationQuery = reservationsRef.child(user?.uid!!)
+
+                    reservationQuery.addListenerForSingleValueEvent(object : ValueEventListener {
+                        override fun onDataChange(dataSnapshot: DataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                // L'utilisateur a une réservation, on exécute ReservationActivity
+                                startActivity(Intent(this@ListDispoRoomHotelActivity, ReservationActivity::class.java))
+                            } else {
+                                // L'utilisateur n'a pas de réservation, on exécute AucuneReservationActivity
+                                startActivity(Intent(this@ListDispoRoomHotelActivity, AucuneReservationActivity::class.java))
+                            }
+                        }
+
+                        override fun onCancelled(databaseError: DatabaseError) {
+                            // Gestion des erreurs
+                        }
+                    })
+                }
                 R.id.nav_logout->{
                     // permet de se deconnecter
                     auth.signOut()
