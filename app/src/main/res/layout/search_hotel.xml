@@ -265,7 +265,7 @@
             app:layout_constraintTop_toBottomOf="@+id/SearchTypeChambre" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/editEntrer"
+            android:id="@+id/editSearchListDisplay"
             style="@style/TextStyleSearchButton"
             android:layout_width="250dp"
             android:layout_height="50dp"

@@ -5,18 +5,14 @@ import android.app.DatePickerDialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.MenuItem
-import android.widget.ArrayAdapter
-import android.widget.Button
-import android.widget.Spinner
-import android.widget.TextView
-import android.widget.Toast
+import android.widget.*
 import androidx.appcompat.app.ActionBarDrawerToggle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.material.navigation.NavigationView
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
-import java.util.Calendar
+import java.util.*
 
 class SearchActivity : AppCompatActivity(){
 
@@ -158,14 +154,21 @@ class SearchActivity : AppCompatActivity(){
             }
             value.text = count.toString()
         }
-        val btnRechercher: Button =findViewById(R.id.editEntrer)
+        val btnRechercher: Button =findViewById(R.id.editSearchListDisplay)
 
         // When we click on Enter button, it will do the activity ConnexionActivity
         btnRechercher.setOnClickListener{
+            val spinnerDestination: Spinner = findViewById(R.id.SpinnerDestination)
+            val textDestination: String = spinnerDestination.selectedItem.toString()
+
             val intent=Intent(this,ListDispoRoomHotelActivity::class.java)
+
+            intent.putExtra("textDestination",textDestination)
             startActivity(intent)
 
         }
+
+
 
     }
 
@@ -221,5 +224,7 @@ class SearchActivity : AppCompatActivity(){
             }
         })
     }
+
+
     }
 
